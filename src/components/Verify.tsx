@@ -3,7 +3,7 @@ import Award from "lucide-react/dist/esm/icons/award";
 import Building2 from "lucide-react/dist/esm/icons/building-2";
 
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbxqb-cPdq7skBVjOHpc7rsgekMlV8hSbvG571HwyGp6G9e4XhAnfFrJrPIc4NPC1lye/exec";
+  "https://script.google.com/macros/s/AKfycbwV_kTQ5BC5inwf8Zx-5es1bdlIibHkxFE6E5PALCYPuC-mJVvA_ZC5hNyPSYMb2gY0/exec";
 
 export default function Verify() {
   // ================= CERTIFICATE STATES =================
