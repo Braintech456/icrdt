@@ -1,29 +1,9 @@
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import { useState } from 'react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
   return (
     <div className="min-h-screen">
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#0A2647] to-[#205295] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +21,7 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12">
             
-            {/* Contact Form */}
+            {/* ================= CONTACT FORM ================= */}
             <div>
               <h2 className="text-3xl font-bold text-[#0A2647] mb-6">
                 Send Us a Message
@@ -50,7 +30,12 @@ export default function Contact() {
                 Fill out the form below and our team will get back to you within 24-48 hours
               </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://formspree.io/f/mqedvnyp"
+                method="POST"
+                className="space-y-6"
+              >
+                {/* Full Name */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Full Name
@@ -58,14 +43,13 @@ export default function Contact() {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none transition-colors"
                     placeholder="Enter your full name"
                   />
                 </div>
 
+                {/* Email */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Email Address
@@ -73,14 +57,13 @@ export default function Contact() {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
 
+                {/* Phone */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Phone Number
@@ -88,22 +71,31 @@ export default function Contact() {
                   <input
                     type="tel"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none transition-colors"
                     placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
 
+                {/* Subject */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none transition-colors"
+                    placeholder="Subject of your inquiry"
+                  />
+                </div>
+
+                {/* Message */}
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Message
                   </label>
                   <textarea
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
                     required
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none transition-colors resize-none"
@@ -111,6 +103,7 @@ export default function Contact() {
                   />
                 </div>
 
+                {/* Submit */}
                 <button
                   type="submit"
                   className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white px-6 py-4 rounded-md font-semibold text-lg transition-colors flex items-center justify-center gap-2"
@@ -121,7 +114,7 @@ export default function Contact() {
               </form>
             </div>
 
-            {/* Contact Info */}
+            {/* ================= CONTACT INFO ================= */}
             <div>
               <h2 className="text-3xl font-bold text-[#0A2647] mb-6">
                 Contact Information
@@ -148,17 +141,37 @@ export default function Contact() {
                   </div>
                 </div>
 
+                {/* Phone */}
+                <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="w-12 h-12 bg-[#1B4FA3] rounded-md flex items-center justify-center flex-shrink-0">
+                    <Phone className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[#0A2647] mb-2">Phone</h3>
+                    <a
+                      href="tel:+919324352753"
+                      className="text-[#1B4FA3] hover:underline"
+                    >
+                      +91 93243 52753
+                    </a>
+                  </div>
+                </div>
+
                 {/* Address */}
                 <div className="flex items-start gap-4 p-6 bg-gray-50 rounded-lg border border-gray-200">
                   <div className="w-12 h-12 bg-[#1B4FA3] rounded-md flex items-center justify-center flex-shrink-0">
                     <MapPin className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#0A2647] mb-2">Head Office</h3>
-                    <p className="text-gray-700">
-                      3rd Floor, Indira Heights,<br />
-                      Gangapur Road,<br />
-                      Nashik – 422005
+                    <h3 className="font-semibold text-[#0A2647] mb-2">
+                      Office Locations
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">
+                      Head Office: Kaushal, 1st Floor, Near Gauri Shankar Mandir,
+                      Sector 9A, Gurugram - 122001
+                      <br /><br />
+                      Regional Office: 3rd Floor, Indira Heights,
+                      Gangapur Road, Nashik - 422005
                     </p>
                   </div>
                 </div>
@@ -174,7 +187,7 @@ export default function Contact() {
                   </div>
                   <div className="flex justify-between">
                     <span>Saturday:</span>
-                    <span className="font-semibold">10:00 AM - 4:00 PM</span>
+                    <span className="font-semibold">9:00 AM - 2:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Sunday:</span>
