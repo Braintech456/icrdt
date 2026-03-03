@@ -11,52 +11,51 @@ export default function Footer({ onNavigate }: FooterProps) {
   };
 
   return (
-    <footer className="bg-[#0A2647] text-white">
+    <footer className="bg-navy-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">ICRDT</h3>
-            <p className="text-gray-300 text-sm mb-4">
-              India's trusted certification body for robotics, drones, and automation technology.
-              Setting benchmark standards for professional excellence.
+            <h3 className="text-xl font-bold font-merriweather mb-4">ICRDT</h3>
+            <p className="text-gray-300 text-sm mb-4 font-inter leading-relaxed">
+              India's trusted certification body for robotics, drones, and automation technology. Setting benchmark standards for professional excellence.
             </p>
-            <div className="flex items-center gap-2 text-sm text-gray-300">
+            <div className="flex items-center gap-2 text-sm text-gray-300 font-inter">
               <Award size={16} />
               <span>ISO 9001:2015 Certified</span>
             </div>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-gray-300">
+            <h4 className="text-lg font-semibold font-merriweather mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-gray-300 font-inter text-sm">
               <li>
                 <button
                   onClick={() => handleNavClick('about')}
-                  className="hover:text-[#2196F3] transition-colors"
+                  className="hover:text-royal-blue transition-colors"
                 >
                   About ICRDT
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => handleNavClick('why-choose')}
-                  className="hover:text-[#2196F3] transition-colors"
+                  onClick={() => handleNavClick('certifications')}
+                  className="hover:text-royal-blue transition-colors"
                 >
-                  Why Choose Us
+                  Certifications
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNavClick('chapters')}
-                  className="hover:text-[#2196F3] transition-colors"
+                  className="hover:text-royal-blue transition-colors"
                 >
-                  Chapters
+                  Authorized Centers
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleNavClick('contact')}
-                  className="hover:text-[#2196F3] transition-colors"
+                  className="hover:text-royal-blue transition-colors"
                 >
                   Contact Us
                 </button>
@@ -65,20 +64,12 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>
-                <button
-                  onClick={() => handleNavClick('certifications')}
-                  className="hover:text-[#2196F3] transition-colors"
-                >
-                  Certifications
-                </button>
-              </li>
+            <h4 className="text-lg font-semibold font-merriweather mb-4">Services</h4>
+            <ul className="space-y-2 text-gray-300 font-inter text-sm">
               <li>
                 <button
                   onClick={() => handleNavClick('membership')}
-                  className="hover:text-[#2196F3] transition-colors"
+                  className="hover:text-royal-blue transition-colors"
                 >
                   Individual Membership
                 </button>
@@ -86,22 +77,30 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li>
                 <button
                   onClick={() => handleNavClick('membership')}
-                  className="hover:text-[#2196F3] transition-colors"
+                  className="hover:text-royal-blue transition-colors"
                 >
                   Institutional Membership
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick('home')}
+                  className="hover:text-royal-blue transition-colors"
+                >
+                  Verify Certificate
                 </button>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-3 text-gray-300 text-sm">
+            <h4 className="text-lg font-semibold font-merriweather mb-4">Contact Info</h4>
+            <ul className="space-y-3 text-gray-300 text-sm font-inter">
               <li className="flex items-start gap-2">
                 <Mail size={18} className="mt-0.5 flex-shrink-0" />
                 <a
                   href="mailto:icrdt.info@gmail.com"
-                  className="hover:text-[#2196F3] transition-colors"
+                  className="hover:text-royal-blue transition-colors"
                 >
                   icrdt.info@gmail.com
                 </a>
@@ -118,7 +117,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm font-inter">
           <p>Copyright © 2024 ICRDT - Indian Council for Robotics & Drone Technology. All rights reserved.</p>
           <p className="mt-2">ISO 9001:2015 Certified Organization</p>
         </div>

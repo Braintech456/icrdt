@@ -44,7 +44,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation currentPage={currentPage} onNavigate={handleNavigate} />
-      <main className="pt-20">
+      <main className="pt-36">
         {renderPage()}
       </main>
       <Footer onNavigate={handleNavigate} />
