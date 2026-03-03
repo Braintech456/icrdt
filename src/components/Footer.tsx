@@ -108,7 +108,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <li className="flex items-start gap-2">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
                 <span>
-                  3rd Floor, Indira Heights,<br />
+                  Alok, New Pandit Colony,<br />
                   Gangapur Road,<br />
                   Nashik – 422005
                 </span>
