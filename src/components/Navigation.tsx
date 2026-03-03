@@ -31,7 +31,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
 
-            {/* Logo Section */}
+            {/* Logo */}
             <div
               className="flex items-center cursor-pointer flex-shrink-0"
               onClick={() => handleNavClick('home')}
@@ -47,7 +47,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               </div>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-1">
               {navItems.map((item) => (
                 <button
@@ -65,7 +65,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               ))}
             </div>
 
-            {/* Verify Button (Desktop) */}
+            {/* Verify Button */}
             <div className="hidden lg:flex items-center gap-4">
               <button
                 onClick={() => handleNavClick('verify')}
@@ -76,7 +76,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               </button>
             </div>
 
-            {/* Mobile Menu Toggle */}
+            {/* Mobile Toggle */}
             <button
               className="lg:hidden p-2 text-gray-700 hover:text-navy-primary"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -106,7 +106,6 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                 </button>
               ))}
 
-              {/* Mobile Verify Button */}
               <button
                 onClick={() => handleNavClick('verify')}
                 className="w-full bg-royal-blue text-white px-4 py-2.5 mt-4 font-medium text-sm font-inter"
@@ -119,19 +118,23 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         </div>
       )}
 
-      {/* ================= AFFILIATION STRIP ================= */}
-      <div className="bg-gray-100 border-t border-gray-200 pt-3 pb-3 fixed top-24 w-full z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-inter text-gray-700">
-            
-            <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-royal-blue flex-shrink-0" />
-              <span>ISO 9001:2015 Certified Organization</span>
+      {/* ================= BIGGER AFFILIATION STRIP ================= */}
+      <div className="bg-gray-100 border-t border-gray-200 fixed top-24 w-full z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-6 text-sm font-inter text-gray-800">
+
+            <div className="flex items-center gap-3">
+              <CheckCircle size={18} className="text-royal-blue flex-shrink-0" />
+              <span className="font-medium">
+                ISO 9001:2015 Certified Organization
+              </span>
             </div>
 
-            <div className="flex items-center gap-2">
-              <CheckCircle size={16} className="text-royal-blue flex-shrink-0" />
-              <span>National-Level Robotics &amp; Drone Certification Body</span>
+            <div className="flex items-center gap-3">
+              <CheckCircle size={18} className="text-royal-blue flex-shrink-0" />
+              <span className="font-medium">
+                National-Level Robotics &amp; Drone Certification Body
+              </span>
             </div>
 
           </div>
