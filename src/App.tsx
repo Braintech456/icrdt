@@ -7,7 +7,7 @@ import About from './pages/About';
 import Certifications from './pages/Certifications';
 import Membership from './pages/Membership';
 import WhyChoose from './pages/WhyChoose';
-import Chapters from './pages/Chapters';   // ✅ keep this
+import Chapters from './pages/Chapters';
 import VerifyPage from './pages/VerifyPage';
 import Contact from './pages/Contact';
 
@@ -21,7 +21,7 @@ function App() {
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const renderPage = () => {
@@ -36,12 +36,12 @@ function App() {
         return <Certifications />;
 
       case 'membership':
-        return <Membership />;
+        return <Membership onNavigate={handleNavigate} />;
 
       case 'why-choose':
         return <WhyChoose />;
 
-      case 'chapters':   // ✅ use this instead of authorized-centers
+      case 'chapters':
         return <Chapters />;
 
       case 'verify':
@@ -62,7 +62,8 @@ function App() {
         onNavigate={handleNavigate}
       />
 
-      <main className="pt-36">
+      {/* Padding increased slightly because of navbar + affiliation strip */}
+      <main className="pt-40">
         {renderPage()}
       </main>
 
