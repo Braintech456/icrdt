@@ -11,17 +11,20 @@ export default function Verify() {
   const [candidateEmail, setCandidateEmail] = useState("");
   const [certResult, setCertResult] = useState<any>(null);
   const [certError, setCertError] = useState("");
+  const [certLoading, setCertLoading] = useState(false);
 
   // ================= CENTER STATES =================
   const [centerEmail, setCenterEmail] = useState("");
   const [centerResult, setCenterResult] = useState<any>(null);
   const [centerError, setCenterError] = useState("");
+  const [centerLoading, setCenterLoading] = useState(false);
 
   // ================= CERTIFICATE VERIFICATION =================
   const verifyCertificate = async (e: React.FormEvent) => {
     e.preventDefault();
     setCertResult(null);
     setCertError("");
+    setCertLoading(true);
 
     const url =
       `${SCRIPT_URL}?type=certificate` +
@@ -39,6 +42,8 @@ export default function Verify() {
       }
     } catch {
       setCertError("Verification service temporarily unavailable.");
+    } finally {
+      setCertLoading(false);
     }
   };
 
@@ -47,6 +52,7 @@ export default function Verify() {
     e.preventDefault();
     setCenterResult(null);
     setCenterError("");
+    setCenterLoading(true);
 
     const url =
       `${SCRIPT_URL}?type=center` +
@@ -63,6 +69,8 @@ export default function Verify() {
       }
     } catch {
       setCenterError("Verification service temporarily unavailable.");
+    } finally {
+      setCenterLoading(false);
     }
   };
 
@@ -82,11 +90,10 @@ export default function Verify() {
           </p>
         </div>
 
-        {/* Verification Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
 
-          {/* Certificate Verification */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 hover:shadow-md transition-shadow">
+          {/* ================= CERTIFICATE ================= */}
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
             <div className="w-12 h-12 bg-[#1B4FA3] rounded-md flex items-center justify-center mb-6">
               <Award className="text-white" size={26} />
             </div>
@@ -94,11 +101,6 @@ export default function Verify() {
             <h2 className="text-2xl font-bold text-[#0A1F44] mb-3">
               Verify Certification
             </h2>
-
-            <p className="text-gray-600 mb-6">
-              Enter the Certificate ID and registered candidate email address
-              to confirm authenticity.
-            </p>
 
             <form className="space-y-4" onSubmit={verifyCertificate}>
               <input
@@ -119,10 +121,20 @@ export default function Verify() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none"
               />
 
-              <button className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-2 rounded-md font-semibold transition-colors">
-                Verify Certificate
+              <button
+                disabled={certLoading}
+                className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
+              >
+                {certLoading ? "Checking..." : "Verify Certificate"}
               </button>
             </form>
+
+            {certLoading && (
+              <div className="mt-4 flex items-center gap-2 text-[#1B4FA3] font-medium">
+                <div className="w-4 h-4 border-2 border-[#1B4FA3] border-t-transparent rounded-full animate-spin"></div>
+                Please wait while we verify the certificate...
+              </div>
+            )}
 
             {certError && (
               <p className="mt-4 text-red-600 font-medium">{certError}</p>
@@ -139,8 +151,8 @@ export default function Verify() {
             )}
           </div>
 
-          {/* Center Verification */}
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 hover:shadow-md transition-shadow">
+          {/* ================= CENTER ================= */}
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
             <div className="w-12 h-12 bg-[#1B4FA3] rounded-md flex items-center justify-center mb-6">
               <Building2 className="text-white" size={26} />
             </div>
@@ -148,10 +160,6 @@ export default function Verify() {
             <h2 className="text-2xl font-bold text-[#0A1F44] mb-3">
               Verify Authorized Center
             </h2>
-
-            <p className="text-gray-600 mb-6">
-              Confirm whether a training center is officially recognized by ICRDT.
-            </p>
 
             <form className="space-y-4" onSubmit={verifyCenter}>
               <input
@@ -163,10 +171,20 @@ export default function Verify() {
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-[#1B4FA3] focus:outline-none"
               />
 
-              <button className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-2 rounded-md font-semibold transition-colors">
-                Verify Center
+              <button
+                disabled={centerLoading}
+                className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-2 rounded-md font-semibold transition-colors disabled:opacity-70"
+              >
+                {centerLoading ? "Checking..." : "Verify Center"}
               </button>
             </form>
+
+            {centerLoading && (
+              <div className="mt-4 flex items-center gap-2 text-[#1B4FA3] font-medium">
+                <div className="w-4 h-4 border-2 border-[#1B4FA3] border-t-transparent rounded-full animate-spin"></div>
+                Please wait while we verify the center...
+              </div>
+            )}
 
             {centerError && (
               <p className="mt-4 text-red-600 font-medium">{centerError}</p>
@@ -184,40 +202,6 @@ export default function Verify() {
           </div>
 
         </div>
-
-        {/* Information Section */}
-        <div className="bg-[#F4F6F9] border border-gray-200 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-[#0A1F44] mb-4">
-            About ICRDT Verification
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-8 text-gray-700">
-            <div>
-              <p className="mb-4">
-                The ICRDT Verification System is the official registry maintained
-                by the Indian Council for Robotics & Drone Technology to ensure
-                authenticity of certifications and authorized centers.
-              </p>
-              <p>
-                Email-based validation ensures accuracy and prevents misuse of
-                institutional credentials.
-              </p>
-            </div>
-
-            <div>
-              <p className="mb-4">
-                For discrepancies or suspected misuse, contact:
-              </p>
-              <p className="font-semibold text-[#0A1F44] mb-2">
-                icrdt.info@gmail.com
-              </p>
-              <p className="text-sm text-gray-600">
-                Standard response time: 24–48 working hours
-              </p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );
