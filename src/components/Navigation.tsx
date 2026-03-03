@@ -12,7 +12,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'certifications', label: 'Certifications' },
-    { id: 'chapters', label: 'Authorized Centers' },
+    { id: 'authorized-centers', label: 'Authorized Centers' },
     { id: 'membership', label: 'Membership' },
     { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
@@ -26,18 +26,20 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   return (
     <>
+      {/* ================= NAVBAR ================= */}
       <nav className="bg-white border-b border-gray-200 shadow-sm fixed w-full top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
+
+            {/* Logo Section */}
             <div
               className="flex items-center cursor-pointer flex-shrink-0"
               onClick={() => handleNavClick('home')}
             >
-              <div className="flex items-baseline gap-2">
-                <div className="text-3xl font-bold font-merriweather text-navy-primary">
-                  ICRDT
-                </div>
+              <div className="text-3xl font-bold font-merriweather text-navy-primary">
+                ICRDT
               </div>
+
               <div className="ml-4 border-l border-gray-300 pl-4 hidden sm:block">
                 <div className="text-xs text-gray-700 font-medium leading-tight font-inter">
                   Indian Council for<br />Robotics &amp; Drone Technology
@@ -45,6 +47,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               </div>
             </div>
 
+            {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-1">
               {navItems.map((item) => (
                 <button
@@ -62,8 +65,10 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               ))}
             </div>
 
+            {/* Verify Button (Desktop) */}
             <div className="hidden lg:flex items-center gap-4">
               <button
+                onClick={() => handleNavClick('verify')}
                 className="bg-royal-blue hover:bg-navy-primary text-white px-6 py-2.5 font-medium transition-colors font-inter"
                 style={{ borderRadius: '6px' }}
               >
@@ -71,6 +76,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
               </button>
             </div>
 
+            {/* Mobile Menu Toggle */}
             <button
               className="lg:hidden p-2 text-gray-700 hover:text-navy-primary"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -81,6 +87,7 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         </div>
       </nav>
 
+      {/* ================= MOBILE MENU ================= */}
       {isMenuOpen && (
         <div className="fixed top-24 left-0 right-0 bg-white border-b border-gray-200 z-40 lg:hidden">
           <div className="max-w-7xl mx-auto px-4 py-4">
@@ -98,7 +105,10 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
                   {item.label}
                 </button>
               ))}
+
+              {/* Mobile Verify Button */}
               <button
+                onClick={() => handleNavClick('verify')}
                 className="w-full bg-royal-blue text-white px-4 py-2.5 mt-4 font-medium text-sm font-inter"
                 style={{ borderRadius: '6px' }}
               >
@@ -109,17 +119,21 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
         </div>
       )}
 
+      {/* ================= AFFILIATION STRIP ================= */}
       <div className="bg-gray-100 border-t border-gray-200 pt-3 pb-3 fixed top-24 w-full z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-inter text-gray-700">
+            
             <div className="flex items-center gap-2">
               <CheckCircle size={16} className="text-royal-blue flex-shrink-0" />
               <span>ISO 9001:2015 Certified Organization</span>
             </div>
+
             <div className="flex items-center gap-2">
               <CheckCircle size={16} className="text-royal-blue flex-shrink-0" />
               <span>National-Level Robotics &amp; Drone Certification Body</span>
             </div>
+
           </div>
         </div>
       </div>
