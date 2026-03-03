@@ -7,7 +7,7 @@ import About from './pages/About';
 import Certifications from './pages/Certifications';
 import Membership from './pages/Membership';
 import WhyChoose from './pages/WhyChoose';
-import AuthorizedCenters from './pages/AuthorizedCenters';
+import Chapters from './pages/Chapters';   // ✅ keep this
 import VerifyPage from './pages/VerifyPage';
 import Contact from './pages/Contact';
 
@@ -21,7 +21,7 @@ function App() {
 
   const handleNavigate = (page: string) => {
     setCurrentPage(page);
-    window.scrollTo(0, 0); // Scroll to top on navigation
+    window.scrollTo(0, 0);
   };
 
   const renderPage = () => {
@@ -41,8 +41,8 @@ function App() {
       case 'why-choose':
         return <WhyChoose />;
 
-      case 'authorized-centers':
-        return <AuthorizedCenters />;
+      case 'chapters':   // ✅ use this instead of authorized-centers
+        return <Chapters />;
 
       case 'verify':
         return <VerifyPage />;
