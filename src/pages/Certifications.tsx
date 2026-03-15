@@ -80,11 +80,11 @@ export default function Certifications() {
                     ))}
                   </div>
 
-                  {/* ⭐ APPLY BUTTON — FINAL WORKING VERSION */}
+                  {/* ⭐ APPLY BUTTON — OPENS GOOGLE FORM */}
                   <button
                     onClick={() =>
                       window.open(
-                        "https://formspree.io/forms/mykndjlb",
+                        "https://forms.gle/prvLwkx361mVJb677",
                         "_blank"
                       )
                     }
@@ -113,11 +113,11 @@ export default function Certifications() {
               Join the next generation of certified professionals in Robotics and Drone Technology.
             </p>
 
-            {/* ⭐ CTA BUTTON — FINAL WORKING VERSION */}
+            {/* ⭐ CTA BUTTON — OPENS GOOGLE FORM */}
             <button
               onClick={() =>
                 window.open(
-                  "https://formspree.io/forms/mykndjlb",
+                  "https://forms.gle/prvLwkx361mVJb677",
                   "_blank"
                 )
               }
