@@ -72,9 +72,18 @@ export default function Certifications() {
                     ))}
                   </div>
 
-                  <button className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-3 rounded-md font-semibold transition-colors">
-                    Apply Now
-                  </button>
+                  {/* ⭐ APPLY BUTTON — FIXED */}
+                  <a
+                    href="/icrdt-application.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full"
+                  >
+                    <button className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-3 rounded-md font-semibold transition-colors">
+                      Apply Now
+                    </button>
+                  </a>
+
                 </div>
               </div>
             ))}
@@ -93,9 +102,18 @@ export default function Certifications() {
             <p className="text-gray-200 mb-8">
               Join the next generation of certified professionals in Robotics and Drone Technology.
             </p>
-            <button className="bg-[#FF6B35] hover:bg-[#E55A2B] px-8 py-4 rounded-md font-semibold text-lg transition-all">
-              Start Your Application
-            </button>
+
+            {/* ⭐ CTA BUTTON ALSO FIXED */}
+            <a
+              href="/icrdt-application.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-[#FF6B35] hover:bg-[#E55A2B] px-8 py-4 rounded-md font-semibold text-lg transition-all">
+                Start Your Application
+              </button>
+            </a>
+
           </div>
         </div>
       </section>
