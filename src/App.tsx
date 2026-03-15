@@ -10,6 +10,7 @@ import WhyChoose from './pages/WhyChoose';
 import Chapters from './pages/Chapters';
 import VerifyPage from './pages/VerifyPage';
 import Contact from './pages/Contact';
+import Apply from "./pages/apply";
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
