@@ -10,7 +10,9 @@ export default function Certifications() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
             <Award className="text-[#FF6B35]" size={20} />
-            <span className="text-sm font-medium">Professional Certifications</span>
+            <span className="text-sm font-medium">
+              Professional Certifications
+            </span>
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -72,17 +74,15 @@ export default function Certifications() {
                     ))}
                   </div>
 
-                  {/* ⭐ APPLY BUTTON — FIXED */}
-                  <a
-                    href="/icrdt-application.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full"
+                  {/* ⭐ APPLY BUTTON — FINAL FIX */}
+                  <button
+                    onClick={() =>
+                      window.open("/icrdt-application.html", "_blank")
+                    }
+                    className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-3 rounded-md font-semibold transition-colors"
                   >
-                    <button className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-3 rounded-md font-semibold transition-colors">
-                      Apply Now
-                    </button>
-                  </a>
+                    Apply Now
+                  </button>
 
                 </div>
               </div>
@@ -99,20 +99,20 @@ export default function Certifications() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Get Certified?
             </h2>
+
             <p className="text-gray-200 mb-8">
               Join the next generation of certified professionals in Robotics and Drone Technology.
             </p>
 
-            {/* ⭐ CTA BUTTON ALSO FIXED */}
-            <a
-              href="/icrdt-application.html"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* ⭐ CTA BUTTON — FINAL FIX */}
+            <button
+              onClick={() =>
+                window.open("/icrdt-application.html", "_blank")
+              }
+              className="bg-[#FF6B35] hover:bg-[#E55A2B] px-8 py-4 rounded-md font-semibold text-lg transition-all"
             >
-              <button className="bg-[#FF6B35] hover:bg-[#E55A2B] px-8 py-4 rounded-md font-semibold text-lg transition-all">
-                Start Your Application
-              </button>
-            </a>
+              Start Your Application
+            </button>
 
           </div>
         </div>
