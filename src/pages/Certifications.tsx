@@ -67,17 +67,26 @@ export default function Certifications() {
 
                   <div className="space-y-2 mb-6">
                     {course.modules.slice(0, 3).map((module, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
-                        <CheckCircle className="text-green-500" size={16} />
+                      <div
+                        key={i}
+                        className="flex items-center gap-2 text-sm text-gray-600"
+                      >
+                        <CheckCircle
+                          className="text-green-500"
+                          size={16}
+                        />
                         <span>{module}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* ⭐ APPLY BUTTON — FINAL FIX */}
+                  {/* ⭐ APPLY BUTTON — FINAL WORKING VERSION */}
                   <button
                     onClick={() =>
-                      window.open("/icrdt-application.html", "_blank")
+                      window.open(
+                        "https://formspree.io/forms/mykndjlb",
+                        "_blank"
+                      )
                     }
                     className="w-full bg-[#1B4FA3] hover:bg-[#163E82] text-white py-3 rounded-md font-semibold transition-colors"
                   >
@@ -104,10 +113,13 @@ export default function Certifications() {
               Join the next generation of certified professionals in Robotics and Drone Technology.
             </p>
 
-            {/* ⭐ CTA BUTTON — FINAL FIX */}
+            {/* ⭐ CTA BUTTON — FINAL WORKING VERSION */}
             <button
               onClick={() =>
-                window.open("/icrdt-application.html", "_blank")
+                window.open(
+                  "https://formspree.io/forms/mykndjlb",
+                  "_blank"
+                )
               }
               className="bg-[#FF6B35] hover:bg-[#E55A2B] px-8 py-4 rounded-md font-semibold text-lg transition-all"
             >
