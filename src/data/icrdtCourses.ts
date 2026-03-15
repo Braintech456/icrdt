@@ -34,6 +34,7 @@ export const icrdtCourses: IcrdtCourse[] = [
       "Robotics Programmer",
     ],
   },
+
   {
     slug: "certified-drone-technology-professional",
     title: "Certified Drone Technology Professional",
@@ -57,6 +58,7 @@ export const icrdtCourses: IcrdtCourse[] = [
       "Aerial Survey Specialist",
     ],
   },
+
   {
     slug: "industrial-automation-specialist",
     title: "Industrial Automation Specialist",
@@ -80,6 +82,7 @@ export const icrdtCourses: IcrdtCourse[] = [
       "Control Systems Specialist",
     ],
   },
+
   {
     slug: "ai-in-robotics-specialist",
     title: "AI in Robotics Specialist",
@@ -101,6 +104,114 @@ export const icrdtCourses: IcrdtCourse[] = [
       "AI Robotics Engineer",
       "Autonomous Systems Developer",
       "Robotics AI Specialist",
+    ],
+  },
+
+  // ⭐ NEW COURSES ADDED
+
+  {
+    slug: "certified-robotics-system-engineer",
+    title: "Certified Robotics System Engineer",
+    code: "CRSE",
+    duration: "4 Months",
+    level: "Advanced",
+    description:
+      "Professional certification covering robotic system design, kinematics, sensors, and embedded systems.",
+    overview:
+      "Focuses on engineering-level understanding of robot mechanics, control systems, and perception technologies.",
+    modules: [
+      "Robotics Fundamentals",
+      "Kinematics & Dynamics",
+      "Robot Drive Systems",
+      "Sensors & Perception",
+      "Embedded Systems for Robotics",
+    ],
+    careers: [
+      "Robotics System Engineer",
+      "Robot Design Engineer",
+      "Automation Engineer",
+      "Embedded Robotics Engineer",
+    ],
+  },
+
+  {
+    slug: "certified-industrial-robotics-automation-professional",
+    title: "Certified Industrial Robotics & Automation Professional",
+    code: "CIRAP",
+    duration: "5 Months",
+    level: "Advanced",
+    description:
+      "Industry-oriented certification in industrial robots, PLC systems, automation, and smart manufacturing.",
+    overview:
+      "Prepares professionals for Industry 4.0 environments with hands-on automation and robotics integration skills.",
+    modules: [
+      "Industrial Robotics Overview",
+      "Robot End-Effectors & Grippers",
+      "PLC & Industrial Controllers",
+      "Robot Programming for Industry",
+      "Industry & Smart Factory",
+      "Safety & Standards",
+      "Industry Project",
+    ],
+    careers: [
+      "Industrial Robotics Engineer",
+      "Automation Engineer",
+      "PLC Engineer",
+      "Smart Factory Specialist",
+    ],
+  },
+
+  {
+    slug: "certified-drone-technology-engineer",
+    title: "Certified Drone Technology Engineer",
+    code: "CDTE",
+    duration: "3 Months",
+    level: "Intermediate",
+    description:
+      "Comprehensive certification in drone design, propulsion, flight control systems, and regulations.",
+    overview:
+      "Covers UAV architecture, autonomous flight systems, communication technologies, and regulatory compliance.",
+    modules: [
+      "Drone Fundamentals",
+      "Drone Propulsion Systems",
+      "Flight Controllers & Sensors",
+      "Drone Frame Design",
+      "Communication Systems",
+      "Drone Programming",
+      "Regulations & Certification",
+    ],
+    careers: [
+      "Drone Engineer",
+      "UAV Developer",
+      "Drone Systems Specialist",
+      "Aerial Robotics Engineer",
+    ],
+  },
+
+  {
+    slug: "certified-robotics-software-ai-developer",
+    title: "Certified Robotics Software & AI Developer",
+    code: "CRSAID",
+    duration: "5 Months",
+    level: "Advanced",
+    description:
+      "Advanced certification focusing on robotics software development, AI integration, and autonomous navigation.",
+    overview:
+      "Emphasizes ROS, computer vision, machine learning, SLAM, and intelligent robotic systems development.",
+    modules: [
+      "Programming Foundations",
+      "ROS (Robot Operating System)",
+      "Robot Simulation",
+      "Computer Vision for Robotics",
+      "AI/ML for Robotics",
+      "SLAM & Navigation",
+      "Capstone Project",
+    ],
+    careers: [
+      "Robotics Software Engineer",
+      "AI Robotics Developer",
+      "Autonomous Systems Engineer",
+      "ROS Developer",
     ],
   },
 ];
