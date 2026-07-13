@@ -32,20 +32,24 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
           <div className="flex justify-between items-center h-24">
 
             {/* Logo */}
-            <div
-              className="flex items-center cursor-pointer flex-shrink-0"
-              onClick={() => handleNavClick('home')}
-            >
-              <div className="text-3xl font-bold font-merriweather text-navy-primary">
-                ICRDT
-              </div>
+<div
+  className="flex items-center cursor-pointer flex-shrink-0"
+  onClick={() => handleNavClick('home')}
+>
+  <img
+    src="https://i.ibb.co/SZh4K4h/ICRDT-Logo.png"
+    alt="ICRDT Logo"
+    className="h-16 w-auto"
+  />
 
-              <div className="ml-4 border-l border-gray-300 pl-4 hidden sm:block">
-                <div className="text-xs text-gray-700 font-medium leading-tight font-inter">
-                  Indian Council for<br />Robotics &amp; Drone Technology
-                </div>
-              </div>
-            </div>
+  <div className="ml-4 border-l border-gray-300 pl-4 hidden sm:block">
+    <div className="text-xs text-gray-700 font-medium leading-tight font-inter">
+      Indian Council for
+      <br />
+      Robotics &amp; Drone Technology
+    </div>
+  </div>
+</div>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center space-x-1">
