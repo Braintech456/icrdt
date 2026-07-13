@@ -10,14 +10,15 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'authorized-centers', label: 'Authorized Centers' },
-    { id: 'membership', label: 'Membership' },
-    { id: 'about', label: 'About' },
-    { id: 'contact', label: 'Contact' },
-  ];
-
+  { id: 'home', label: 'Home' },
+  { id: 'commerce-olympiad', label: 'Commerce Olympiad' },
+  { id: 'certifications', label: 'Certifications' },
+  { id: 'authorized-centers', label: 'Authorized Centers' },
+  { id: 'membership', label: 'Membership' },
+  { id: 'about', label: 'About' },
+  { id: 'contact', label: 'Contact' },
+];
+  
   const handleNavClick = (pageId: string) => {
     onNavigate(pageId);
     setIsMenuOpen(false);
