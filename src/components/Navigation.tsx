@@ -11,7 +11,6 @@ export default function Navigation({ currentPage, onNavigate }: NavigationProps)
 
   const navItems = [
   { id: 'home', label: 'Home' },
-  { id: 'commerce-olympiad', label: 'Commerce Olympiad' },
   { id: 'certifications', label: 'Certifications' },
   { id: 'authorized-centers', label: 'Authorized Centers' },
   { id: 'membership', label: 'Membership' },
