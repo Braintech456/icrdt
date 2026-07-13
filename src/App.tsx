@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import About from './pages/About';
+import CommerceOlympiad from './pages/CommerceOlympiad';
 import Certifications from './pages/Certifications';
 import Membership from './pages/Membership';
 import WhyChoose from './pages/WhyChoose';
@@ -29,6 +30,9 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <Home onNavigate={handleNavigate} />;
+
+      case 'commerce-olympiad':
+        return <CommerceOlympiad />;
 
       case 'about':
         return <About />;
